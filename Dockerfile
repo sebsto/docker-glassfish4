@@ -23,9 +23,6 @@ ENV JAVA_HOME /usr/local/jdk1.8.0_05
 ENV GF_HOME /usr/local/glassfish4
 ENV PATH $PATH:$JAVA_HOME/bin:$GF_HOME/bin
 
-# PORT FORWARD THE ADMIN PORT, HTTP LISTENER-1 PORT, HTTPS LISTENER PORT, PURE JMX CLIENTS PORT, MESSAGE QUEUE PORT, IIOP PORT, IIOP/SSL PORT, IIOP/SSL PORT WITH MUTUAL AUTHENTICATION
-EXPOSE 4848 8080 8181 8686 7676 3700 3820 3920
-
 # Allow Derby to start as daemon (used by some Java EE app, such as Pet Store)
 RUN echo "grant { permission java.net.SocketPermission \"localhost:1527\", \"listen\"; };" >> $JAVA_HOME/jre/lib/security/java.policy
 
@@ -39,4 +36,7 @@ RUN rm /tmp/password_?.txt
 ADD start-gf.sh /usr/local/bin/start-gf.sh
 RUN chmod 755 /usr/local/bin/start-gf.sh
 
-CMD /usr/local/bin/start-gf.sh
+# PORT FORWARD THE ADMIN PORT, HTTP LISTENER-1 PORT, HTTPS LISTENER PORT, PURE JMX CLIENTS PORT, MESSAGE QUEUE PORT, IIOP PORT, IIOP/SSL PORT, IIOP/SSL PORT WITH MUTUAL AUTHENTICATION
+EXPOSE 4848 8080 8181 8686 7676 3700 3820 3920
+
+CMD ["/usr/local/bin/start-gf.sh"]
