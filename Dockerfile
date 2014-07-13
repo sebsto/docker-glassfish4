@@ -41,6 +41,6 @@ EXPOSE 4848 8080 8181 8686 7676 3700 3820 3920
 
 # deploy an application to the container
 # example below - it uses the auto-deploy service of Glassfish
-# ADD async-chat.war /usr/local/glassfish4/glassfish/domains/domain1/autodeploy/async-chat.war
+# ADD http://public-sst.s3.amazonaws.com/async-chat.war /usr/local/glassfish4/glassfish/domains/domain1/autodeploy/async-chat.war
 
 CMD ["/usr/local/bin/start-gf.sh"]
