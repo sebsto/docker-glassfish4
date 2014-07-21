@@ -37,7 +37,9 @@ ADD start-gf.sh /usr/local/bin/start-gf.sh
 RUN chmod 755 /usr/local/bin/start-gf.sh
 
 # PORT FORWARD THE ADMIN PORT, HTTP LISTENER-1 PORT, HTTPS LISTENER PORT, PURE JMX CLIENTS PORT, MESSAGE QUEUE PORT, IIOP PORT, IIOP/SSL PORT, IIOP/SSL PORT WITH MUTUAL AUTHENTICATION
-EXPOSE 4848 8080 8181 8686 7676 3700 3820 3920
+#EXPOSE 4848 8080 8181 8686 7676 3700 3820 3920
+# ElasticBeanstalk only expose first port
+EXPOSE 8080 4848
 
 # deploy an application to the container
 # example below - it uses the auto-deploy service of Glassfish
