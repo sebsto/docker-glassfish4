@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM      base
+FROM       ubuntu
 MAINTAINER "Sebastien Stormacq" "stormacq@amazon.com"
 
 # Install required Linux packages
