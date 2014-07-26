@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
 
-asadmin start-domain
 asadmin start-database
-tail -f /usr/local/glassfish4/glassfish/domains/domain1/logs/server.log
+# start GlassFish - verbose forces to run in foreground
+asadmin start-domain --verbose
