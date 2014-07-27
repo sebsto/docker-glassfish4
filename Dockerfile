@@ -1,6 +1,7 @@
-# Glassfish4 + Oracle JDK 1.8.0_05
+# Glassfish4 + Oracle JDK 1.8.0
 #
-# VERSION               0.0.1
+# VERSION     0.5
+# BUILD       20140727
 
 FROM       ubuntu:latest
 MAINTAINER "Sebastien Stormacq" "stormacq@amazon.com"
@@ -11,8 +12,8 @@ RUN apt-get -y install wget
 RUN apt-get -y install unzip
 
 #Install Java 1.8
-RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u5-linux-x64.tar.gz"
-RUN mv /jdk-8u5-linux-x64.tar.gz /usr/local; cd /usr/local; tar zxvf jdk-8u5-linux-x64.tar.gz ; rm -f jdk-8u5-linux-x64.tar.gz ; cd /
+RUN wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u11-b12/jdk-8u11-linux-x64.tar.gz"
+RUN mv /jdk-8u11-linux-x64.tar.gz /usr/local; cd /usr/local; tar zxvf jdk-8u11-linux-x64.tar.gz ; rm -f jdk-8u11-linux-x64.tar.gz ; cd /
 
 # Install GlassFish 4
 RUN wget -q --no-cookies --no-check-certificate "http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip"
