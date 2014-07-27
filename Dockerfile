@@ -20,7 +20,7 @@ RUN wget -q --no-cookies --no-check-certificate "http://download.java.net/glassf
 RUN mv /glassfish-4.0.zip /usr/local; cd /usr/local; unzip glassfish-4.0.zip ; rm -f glassfish-4.0.zip ; cd /
 
 # Setup environment variables
-ENV JAVA_HOME /usr/local/jdk1.8.0_011
+ENV JAVA_HOME /usr/local/jdk1.8.0_11
 ENV GF_HOME /usr/local/glassfish4
 ENV PATH $PATH:$JAVA_HOME/bin:$GF_HOME/bin
 
